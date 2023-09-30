@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+  xmlns="https://jakarta.ee/xml/ns/jakartaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+  version="5.0"
+>    <!-- Config here. -->
+  <welcome-file-list>
+    <welcome-file>hello.jsp</welcome-file>
+  </welcome-file-list>
+
+  <listener>
+    <listener-class>com.example.helper.MyContextListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>context_example</param-name>
+    <param-value>This is an example attribute!</param-value>
+  </context-param>
+
+  <servlet>
+    <servlet-name>TestingServlet</servlet-name>
+    <servlet-class>com.example.TestingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ConfigExampleServlet</servlet-name>
+    <servlet-class>com.example.ConfigExampleServlet</servlet-class>
+    <init-param>
+      <param-name>config_example</param-name>
+      <param-value>This is an example attribute!</param-value>
+    </init-param>
+    <init-param>
+      <param-name>another_config_example</param-name>
+      <param-value>This is another example attribute!</param-value>
+    </init-param>
+  </servlet>
+  <servlet>
+    <servlet-name>ContextExampleServlet</servlet-name>
+    <servlet-class>com.example.ContextExampleServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>TestingServlet</servlet-name>
+    <url-pattern>/testing</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConfigExampleServlet</servlet-name>
+    <url-pattern>/config</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ContextExampleServlet</servlet-name>
+    <url-pattern>/context</url-pattern>
+  </servlet-mapping>
+</web-app>
