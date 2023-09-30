@@ -11,7 +11,7 @@ git clone git@github.com:chimfonzee/ICS2608_Projects.git
 
 # Download the Code
 
-!(How to Download Git Project)[resources/screenshot.png]
+![How to Download Git Project](resources/screenshot.png)
 
 # Check Versions
 - Project is using the following:
